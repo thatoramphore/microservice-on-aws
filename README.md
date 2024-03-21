@@ -3,7 +3,7 @@
 ## Lab Overview And High Level Design
 
 Let's start with the High Level Design.
-![High Level Design](./images/high-level-design.jpg)
+![High Level Design](./images/high-level-design.png)
 An Amazon API Gateway is a collection of resources and methods. For this tutorial, you create one resource (DynamoDBManager) and define one method (POST) on it. The method is backed by a Lambda function (LambdaFunctionOverHttps). That is, when you call the API through an HTTPS endpoint, Amazon API Gateway invokes the Lambda function.
 
 The POST method on the DynamoDBManager resource supports the following DynamoDB operations:
@@ -24,7 +24,7 @@ The following is a sample request payload for a DynamoDB create item operation:
     "payload": {
         "Item": {
             "id": "1",
-            "name": "Bob"
+            "name": "Thato"
         }
     }
 }
@@ -44,7 +44,8 @@ The following is a sample request payload for a DynamoDB read item operation:
 
 ## Setup
 
-### Create Lambda IAM Role 
+### CREATING LAMBDA IAM ROLE
+
 Create the execution role that gives your function permission to access AWS resources.
 
 To create an execution role
@@ -263,7 +264,7 @@ In this step, you deploy the API that you created to a stage called prod.
 
     * To run this from terminal using Curl, run the below
     ```
-    $ curl -X POST -d "{\"operation\":\"create\",\"tableName\":\"lambda-apigateway\",\"payload\":{\"Item\":{\"id\":\"1\",\"name\":\"Bob\"}}}" https://$API.execute-api.$REGION.amazonaws.com/prod/DynamoDBManager
+    $ curl -X POST -d "{\"operation\":\"create\",\"tableName\":\"lambda-apigateway\",\"payload\":{\"Item\":{\"id\":\"1\",\"name\":\"Thato\"}}}" https://$API.execute-api.$REGION.amazonaws.com/prod/DynamoDBManager
     ```   
 3. To validate that the item is indeed inserted into DynamoDB table, go to Dynamo console, select "lambda-apigateway" table, select "Items" tab, and the newly inserted item should be displayed.
 
@@ -280,6 +281,31 @@ In this step, you deploy the API that you created to a stage called prod.
 }
 ```
 ![List Dynamo Items](./images/dynamo-item-list.jpg)
+
+
+Optionally you can run other operations, for this demo I will test the 'ping' operation, from which I am expecting to get 'pong' as a response.
+To request this operation, use the following JSON:
+
+```json
+{
+    "operation": "ping",
+    "tableName": "lambda-apigateway",
+    "payload": {
+        "Item": {
+            "id": "1234567ABCDEFG",
+            "number": 6
+        }
+    }
+}
+```
+
+
+Ping Pong! Successfully got ‘pong’ as a response. [Doing a little dance at my desk 🕺]
+
+
+![Ping Dynamo Items](./images/dynamo-item-ping.png)
+
+To execute other operations follow the same steps as for the 'create' and 'ping' operations above and rename the operation to your desired operation.
 
 We have successfully created a serverless API using API Gateway, Lambda, and DynamoDB!
 

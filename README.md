@@ -103,7 +103,6 @@ To create an execution role
 
 3. Click "Create function"
 
-![Lambda basic information](./images/lambda-basic-info.png)
 
 4. Replace the boilerplate code with the following code snippet and click "Save"
 

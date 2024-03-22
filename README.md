@@ -146,7 +146,7 @@ def lambda_handler(event, context):
     else:
         raise ValueError('Unrecognized operation "{}"'.format(operation))
 ```
-![Lambda Code](./images/lambda-code-paste.png)
+![Lambda Code](./images/lambda-code.png)
 
 ### Test Lambda Function
 

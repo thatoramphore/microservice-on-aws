@@ -3,7 +3,9 @@
 ## Lab Overview And High Level Design
 
 Let's start with the High Level Design.
+
 ![High Level Design](./images/high-level-design.png)
+
 An Amazon API Gateway is a collection of resources and methods. For this tutorial, you create one resource (DynamoDBManager) and define one method (POST) on it. The method is backed by a Lambda function (LambdaFunctionOverHttps). That is, when you call the API through an HTTPS endpoint, Amazon API Gateway invokes the Lambda function.
 
 The POST method on the DynamoDBManager resource supports the following DynamoDB operations:
@@ -92,15 +94,18 @@ To create an execution role
 **To create the function**
 1. Click "Create function" in AWS Lambda Console
 
-![Create function](./images/create-lambda.jpg)
+![Create function](./images/create-lambda-1.png)
 
-2. Select "Author from scratch". Use name **LambdaFunctionOverHttps** , select **Python 3.7** as Runtime. Under Permissions, select "Use an existing role", and select **lambda-apigateway-role** that we created, from the drop down
+
+![Create function](./images/create-lambda-2.png)
+
+2. Select “Author from scratch”. Use the name **LambdaFunctionOverHttps** , select **Python** as Runtime. Under Permissions, select "Use an existing role", and select **lambda-apigateway-role** that was created, from the drop down
 
 3. Click "Create function"
 
-![Lambda basic information](./images/lambda-basic-info.jpg)
+![Lambda basic information](./images/lambda-basic-info.png)
 
-4. Replace the boilerplate coding with the following code snippet and click "Save"
+4. Replace the boilerplate code with the following code snippet and click "Save"
 
 **Example Python Code**
 ```python
@@ -141,7 +146,7 @@ def lambda_handler(event, context):
     else:
         raise ValueError('Unrecognized operation "{}"'.format(operation))
 ```
-![Lambda Code](./images/lambda-code-paste.jpg)
+![Lambda Code](./images/lambda-code-paste.png)
 
 ### Test Lambda Function
 

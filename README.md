@@ -103,7 +103,6 @@ To create an execution role
 
 3. Click "Create function"
 
-
 4. Replace the boilerplate code with the following code snippet and click "Save"
 
 **Example Python Code**

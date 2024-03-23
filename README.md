@@ -152,7 +152,7 @@ def lambda_handler(event, context):
 Let's test our newly created function. We haven't created DynamoDB and the API yet, so we'll do a sample echo operation. The function should output whatever input we pass.
 1. Click the arrow on "Select a test event" and click "Configure test events"
 
-![Configure test events](./images/lambda-test-event-create.jpg)
+![Configure test events](./images/lambda-test-event-create.png)
 
 2. Paste the following JSON into the event. The field "operation" dictates what the lambda function will perform. In this case, it'd simply return the payload from input event as output. Click "Create" to save
 ```json
@@ -164,11 +164,11 @@ Let's test our newly created function. We haven't created DynamoDB and the API y
     }
 }
 ```
-![Save test event](./images/save-test-event.jpg)
+![Save test event](./images/save-test-event.png)
 
 3. Click "Test", and it will execute the test event. You should see the output in the console
 
-![Execute test event](./images/execute-test.jpg)
+![Execute test event](./images/execute-test.png)
 
 We're all set to create DynamoDB table and an API using our lambda as backend!
 

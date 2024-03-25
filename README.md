@@ -195,40 +195,35 @@ Click 'Create table' for the last time.
 ### Create API
 
 **To create the API**
-1. Go to API Gateway console
-2. Click Create API
+1. Open the API Gateway console
+2. Scroll down and click "Build" for REST API
 
-![create API](./images/create-api-button.jpg) 
+![create API](./images/build-api-button.png) 
 
-3. Scroll down and select "Build" for REST API
+3. Give the API name as "DynamoDBOperations", keep everything as is, and click "Create API"
 
-![Build REST API](./images/build-rest-api.jpg) 
+![Build REST API](./images/create-new-api.png) 
 
-4. Give the API name as "DynamoDBOperations", keep everything as is, click "Create API"
+4. Each API is collection of resources and methods that are integrated with backend HTTP endpoints, Lambda functions, or other AWS services. Typically, API resources are organized in a resource tree according to the application logic. At this time you only have the root resource, but let's add a resource next
 
-![Create REST API](./images/create-new-api.jpg)
+5. Click on your newly created API and then click ‘Create resource’
 
-5. Each API is collection of resources and methods that are integrated with backend HTTP endpoints, Lambda functions, or other AWS services. Typically, API resources are organized in a resource tree according to the application logic. At this time you only have the root resource, but let's add a resource next 
+6. On the next screen, input "DynamoDBManager" in the Resource Name, Resource Path will get populated automatically. Click "Create resource"
 
-Click "Actions", then click "Create Resource"
+![Create resource](./images/create-api-resource.png)
 
-![Create API resource](./images/create-api-resource.jpg)
+7. Let's create a POST Method for our API. With the "/dynamodbmanager" resource selected, click "Create Method" 
 
-6. Input "DynamoDBManager" in the Resource Name, Resource Path will get populated. Click "Create Resource"
+![Create resource method](./images/create-method-button.png)
 
-![Create resource](./images/create-resource-name.jpg)
+8. From the dropdown select ‘POST’ as the method type
 
-7. Let's create a POST Method for our API. With the "/dynamodbmanager" resource selected, Click "Actions" again and click "Create Method". 
+![Create resource method](./images/create-post-method.png)
 
-![Create resource method](./images/create-method-1.jpg)
+9. The integration will come up automatically with "Lambda Function" option selected. Select "LambdaFunctionOverHttps" function that we created earlier. As you start typing the name, your function name will show up. Select and click "Create method". 
+Click the checkmark to allow Lambda Integration.
 
-8. Select "POST" from drop down , then click checkmark
-
-![Create resource method](./images/create-method-2.jpg)
-
-9. The integration will come up automatically with "Lambda Function" option selected. Select "LambdaFunctionOverHttps" function that we created earlier. As you start typing the name, your function name will show up.Select and click "Save". A popup window will come up to add resource policy to the lambda to be invoked by this API. Click "Ok"
-
-![Create lambda integration](./images/create-lambda-integration.jpg)
+![Create lambda integration](./images/create-lambda-integration.png)
 
 Our API-Lambda integration is done!
 

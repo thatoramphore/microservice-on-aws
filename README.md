@@ -229,19 +229,19 @@ Our API-Lambda integration is done!
 
 ### Deploy the API
 
-In this step, you deploy the API that you created to a stage called prod.
+In this step, you deploy the API that you created to a stage called Production.
 
-1. Click "Actions", select "Deploy API"
+1. Click on the ‘POST’ method created above. Click ‘Deploy API’
 
-![Deploy API](./images/deploy-api-1.jpg)
+![Deploy API](./images/deploy-api-stage.png)
 
-2. Now it is going to ask you about a stage. Select "[New Stage]" for "Deployment stage". Give "Prod" as "Stage name". Click "Deploy"
+2. A popup window will come up to add a stage, choose “New Stage '' and for Stage Name type “Production”. Click "Deploy".
 
-![Deploy API to Prod Stage](./images/deploy-api-2.jpg)
+![Deploy API to Prod Stage](./images/deploy-api-button.png)
 
 3. We're all set to run our solution! To invoke our API endpoint, we need the endpoint url. In the "Stages" screen, expand the stage "Prod", select "POST" method, and copy the "Invoke URL" from screen
 
-![Copy Invoke Url](./images/copy-invoke-url.jpg)
+![Copy Invoke Url](./images/copy-invoke-url.png)
 
 
 ### Running our solution

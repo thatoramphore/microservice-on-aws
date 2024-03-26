@@ -233,9 +233,10 @@ In this step, you deploy the API that you created to a stage called Production.
 
 1. Click on the ‘POST’ method created above. Click ‘Deploy API’
 
+2. A popup window will come up to add a stage, choose “New Stage '' and for Stage Name type “Production”. Click "Deploy".
+
 ![Deploy API](./images/deploy-api-stage.png)
 
-2. A popup window will come up to add a stage, choose “New Stage '' and for Stage Name type “Production”. Click "Deploy".
 
 ![Deploy API to Prod Stage](./images/deploy-api-button.png)
 

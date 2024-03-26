@@ -238,6 +238,13 @@ In this step, you deploy the API that you created to a stage called Production.
 ![Deploy API](./images/deploy-api-stage.png)
 
 
+
+<p align="center">
+  &#x25BE;
+</p>
+
+
+
 ![Deploy API to Prod Stage](./images/deploy-api-button.png)
 
 3. We're all set to run our solution! To invoke our API endpoint, we need the endpoint url. In the "Stages" screen, expand the stage "Prod", select "POST" method, and copy the "Invoke URL" from screen

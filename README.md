@@ -46,7 +46,7 @@ The following is a sample request payload for a DynamoDB read item operation:
 
 ## Setup
 
-### CREATING LAMBDA IAM ROLE
+### Create Lambda IAM Role
 
 Create the execution role that gives your function permission to access AWS resources.
 
@@ -252,7 +252,7 @@ In this step, you deploy the API that you created to a stage called Production.
 ![Copy Invoke Url](./images/copy-invoke-url.png)
 
 
-### Running our solution
+### Run The Solution
 
 1. The Lambda function supports using the create operation to create an item in your DynamoDB table. To request this operation, use the following JSON:
 
@@ -268,18 +268,24 @@ In this step, you deploy the API that you created to a stage called Production.
     }
 }
 ```
-2. To execute our API from local machine, we are going to use Postman and Curl command. You can choose either method based on your convenience and familiarity. 
+Before running the operation to create an item in the DynamoDB table, the item count is 0. Upon successful execution, the will change to 1.
+
+![Initial Item Count](./images/initial-item-count.png)
+
+
+2. To execute our API from local machine, we are going to use Postman and Curl command. You can choose either method based on your convenience and familiarity.
+
     * To run this from Postman, select "POST" , paste the API invoke url. Then under "Body" select "raw" and paste the above JSON. Click "Send". API should execute and return "HTTPStatusCode" 200.
 
-    ![Execute from Postman](./images/create-from-postman.jpg)
+    ![Execute from Postman](./images/create-from-postman.png)
 
-    * To run this from terminal using Curl, run the below
+    * To run this from terminal using Curl, run the below snippet
     ```
     $ curl -X POST -d "{\"operation\":\"create\",\"tableName\":\"lambda-apigateway\",\"payload\":{\"Item\":{\"id\":\"1\",\"name\":\"Thato\"}}}" https://$API.execute-api.$REGION.amazonaws.com/prod/DynamoDBManager
     ```   
-3. To validate that the item is indeed inserted into DynamoDB table, go to Dynamo console, select "lambda-apigateway" table, select "Items" tab, and the newly inserted item should be displayed.
+3. To validate that the item is indeed inserted into DynamoDB table, go to Dynamo console, select "lambda-apigateway" table,  click 'Explore table items', and the newly inserted item id(s) should be displayed.
 
-![Dynamo Item](./images/dynamo-item.jpg)
+![Dynamo Item](./images/dynamo-item.png)
 
 4. To get all the inserted items from the table, we can use the "list" operation of Lambda using the same API. Pass the following JSON to the API, and it will return all the items from the Dynamo table
 
@@ -287,15 +293,18 @@ In this step, you deploy the API that you created to a stage called Production.
 {
     "operation": "list",
     "tableName": "lambda-apigateway",
-    "payload": {
+    "paload": {
+
     }
 }
 ```
-![List Dynamo Items](./images/dynamo-item-list.jpg)
+![List Dynamo Items](./images/dynamo-item-list.png)
 
 
 Optionally you can run other operations, for this demo I will test the 'ping' operation, from which I am expecting to get 'pong' as a response.
+
 To request this operation, use the following JSON:
+
 
 ```json
 {
@@ -331,9 +340,13 @@ To delete the table, from DynamoDB console, select the table "lambda-apigateway"
 
 ![Delete Dynamo](./images/delete-dynamo.jpg)
 
+### Cleaning up Lambda
+
 To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps", click "Actions", then click Delete 
 
 ![Delete Lambda](./images/delete-lambda.jpg)
+
+### Cleaning up API Gateway
 
 To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Actions", then "Delete"
 

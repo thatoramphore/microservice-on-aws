@@ -338,21 +338,21 @@ Let's clean up the resources we have created for this demo.
 
 To delete the table, from DynamoDB console, select the table "lambda-apigateway", and click "Delete table"
 
-![Delete Dynamo](./images/delete-dynamo-1.jpg)
+![Delete Dynamo](./images/delete-dynamo-1.png)
 
-![Delete Dynamo](./images/delete-dynamo-2.jpg)
+![Delete Dynamo](./images/delete-dynamo-2.png)
 
 ### Cleaning up Lambda
 
 To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOverHttps", click "Actions", then click Delete 
 
-![Delete Lambda](./images/delete-lambda.jpg)
+![Delete Lambda](./images/delete-lambda.png)
 
 ### Cleaning up API Gateway
 
 To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Actions", then "Delete"
 
-![Delete API](./images/delete-api.jpg)
+![Delete API](./images/delete-api.png)
 
 
 ## Conclusion

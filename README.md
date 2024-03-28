@@ -1,6 +1,6 @@
 # AWS Serverless Microservice
 
-## Lab Overview And High Level Design
+## Overview And High Level Design
 
 
 

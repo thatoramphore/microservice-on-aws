@@ -1,8 +1,8 @@
-# LevelUp! Lab for Serverless
+# AWS Serverless Microservice
 
 ## Lab Overview And High Level Design
 
-Let's start with the High Level Design.
+
 
 ![High Level Design](./images/high-level-design.png)
 
@@ -331,14 +331,16 @@ We have successfully created a serverless API using API Gateway, Lambda, and Dyn
 
 ## Cleanup
 
-Let's clean up the resources we have created for this lab.
+Let's clean up the resources we have created for this demo.
 
 
 ### Cleaning up DynamoDB
 
 To delete the table, from DynamoDB console, select the table "lambda-apigateway", and click "Delete table"
 
-![Delete Dynamo](./images/delete-dynamo.jpg)
+![Delete Dynamo](./images/delete-dynamo-1.jpg)
+
+![Delete Dynamo](./images/delete-dynamo-2.jpg)
 
 ### Cleaning up Lambda
 
@@ -351,3 +353,8 @@ To delete the Lambda, from the Lambda console, select lambda "LambdaFunctionOver
 To delete the API we created, in API gateway console, under APIs, select "DynamoDBOperations" API, click "Actions", then "Delete"
 
 ![Delete API](./images/delete-api.jpg)
+
+
+## Conclusion
+
+This demo showcased how to create your own microservice on AWS Cloud using Amazon API Gateway, AWS Lambda and Amazon DynamoDB. We also tested the microservice using Postman and cleaned up AWS resources to curb any unnecessary costs.
